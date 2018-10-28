@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.util.Queue"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.Sets.SetView"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.HashMultiset"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.Multimap"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.ArrayListMultimap"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="javax.swing.text.Position.Bias"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.BiMap"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.HashBiMap"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.Table"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.HashBasedTable"/>
+    <fullyQualifiedTypeName name="com.google.common.collect.Table.Cell"/>
+    <fullyQualifiedTypeName name="java.lang.Runnable"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
+    <fullyQualifiedTypeName name="JOB.Food"/>
+    <fullyQualifiedTypeName name="JOB.Producter"/>
+    <fullyQualifiedTypeName name="JOB.Customers"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.util.Enumeration"/>
+</qualifiedTypeNameHistroy>

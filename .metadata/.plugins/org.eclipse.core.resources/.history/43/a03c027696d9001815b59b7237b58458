@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>菜鸡学getParameterNames</title>
+</head>
+<body>
+<form action="_10_27_getParameterNames_Study" method="POST" target="_blank">
+<input type="checkbox" name="math"  />数学
+<input type="checkbox" name="physics" />物理
+<input type="checkbox" name="chemistry" />化学
+<input type="submit" />提交
+</form>
+</body>
+</html>

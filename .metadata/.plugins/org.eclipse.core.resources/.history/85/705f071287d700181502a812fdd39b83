@@ -1,0 +1,8 @@
+package JOB;
+
+public class _10_24_product_custmer {
+	public static void main(String[] args) {
+		//多线程分享数据的经典案例
+		
+	}
+}

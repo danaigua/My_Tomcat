@@ -1,0 +1,137 @@
+package JOB;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.junit.jupiter.api.Test;
+
+import com.google.common.base.Function;
+import com.google.common.base.Functions;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
+import com.google.common.collect.Sets.SetView;
+
+public class _10_21_guava_study {
+	@Test
+	public void testGuava1() {
+		System.out.println("test guava");
+		// 只读设置
+//		List<String> list = Arrays.asList("jack","tom","lily","bin");//设置固定长度的集合
+//		list.add("vince");
+		List<String> list = new ArrayList<>();
+		list.add("jack");
+		list.add("tom");
+		list.add("lily");
+		list.add("bin");
+		// jdk1.8之后
+//		List<String> readlist = Collections.unmodifiableList(list);
+//		readlist.add("vince");
+		// guava
+//		ImmutableList<String> ilist = ImmutableList.of("jack","tom","lilky","bin");
+//		ilist.add("vince");
+
+	}
+
+	// 函数式编程
+	@Test
+	public void testGuava2() {
+		List<String> list = Lists.newArrayList("java", "php", "jack", "h5");
+		Collection<String> result = Collections2.filter(list, (e) -> e.startsWith("j"));
+		result.forEach(System.out::println);
+	}
+
+	// 转换功能
+	@Test
+	public void testGuava3() {
+		Set<Long> timeSet = Sets.newHashSet(20121212L, 20170520L, 20160808L);
+		Collection<String> timeCollect = Collections2.transform(timeSet,
+				(e) -> new SimpleDateFormat("yyyy-MM-dd").format(e));
+		timeCollect.forEach(System.out::println);
+	}
+
+	// 组合式函数编程
+	@Test
+	public void testGuava4() {
+		List<String> list = Lists.newArrayList("java", "php", "jack", "h5");
+		// 传两个function
+		Function<String, String> f1 = new Function<String, String>() {
+			public String apply(String t) {
+				return t.length() > 4 ? t.substring(0, 4) : t;
+			}
+		};
+		Function<String, String> f2 = new Function<String, String>() {
+			public String apply(String t) {
+				return t.toUpperCase();
+			}
+		};
+		Function<String, String> f = Functions.compose(f1, f2);
+		Collection<String> coll = Collections2.transform(list, f);
+		coll.forEach(System.out::println);
+	}
+
+	// 集合操作，交集差集，并集
+	@Test
+	public void testGuava5() {
+		Set<Integer> set1 = Sets.newHashSet(1, 2, 3);
+		Set<Integer> set2 = Sets.newHashSet(3, 4, 5);
+		// 交集
+		SetView<Integer> v1 = Sets.intersection(set1, set2);
+		v1.forEach(System.out::println);
+		// 差集
+		SetView<Integer> v2 = Sets.difference(set1, set2);
+		v2.forEach(System.out::println);
+		// 并集
+		SetView<Integer> v3 = Sets.union(set1, set2);
+		v3.forEach(System.out::println);
+	}
+
+	@Test
+	public void testGuava6() {
+		// multiset无序可重复
+		String s = "good good study day day up";
+		String[] ss = s.split(" ");
+		HashMultiset<String> set = HashMultiset.create();
+		for (String str : ss) {
+			set.add(str);
+		}
+		Set<String> set2 = set.elementSet();// 转成set
+		for (String str : set2) {
+			System.out.println(str + ":" + set.count(str));
+		}
+
+	}
+
+	@Test
+	public void testGuava7() {
+		//Multimap:key可重复
+		Map<String,String> map = new HashMap<>();
+		map.put("java", "bin");
+		map.put("android", "bin");
+		map.put("php", "jack");
+		map.put("笑看人生", "vince");
+		Multimap<String, String> mmap = ArrayListMultimap.create();
+		Iterator<Map.Entry<String,String>> iter = map.entrySet().iterator();
+		while(iter.hasNext()) {
+			Map.Entry<String, String> entry = iter.next();
+			mmap.put(entry.getValue(), entry.getKey());
+		}
+		Set<String> keySet = mmap.keySet();
+		for(String key:keySet) {
+			Collection<String> values = mmap.get(key);
+			System.out.println(key+"->"+values);
+		}
+	}
+}

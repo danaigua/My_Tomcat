@@ -1,0 +1,8 @@
+<classpath>
+  <container id="_java_web_study!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="C:/Users/12952/eclipse-workspace/_java_web_study/WebContent/WEB-INF/lib/servlet-api.jar">
+      <source-attachment-path>C:/Users/12952/eclipse-workspace/_java_web_study/WebContent/WEB-INF/lib/servlet-api.jar</source-attachment-path>
+      <attribute name="source_encoding">UTF-8</attribute>
+    </entry>
+  </container>
+</classpath>

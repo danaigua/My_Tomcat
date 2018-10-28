@@ -1,0 +1,39 @@
+package _10_16_hasmap_study;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class _10_16_hasmap_study {
+	public static void main(String[] args) {
+		//hasmap 的实现原理：1，基于哈希表（数组+链表+二叉树（红黑树）jdk1.8后）
+		//默认加载因子为0.75，重新创建的意思是重新散列
+		//默认大小是16
+		/**
+		 * 如何把对象存储到数组中的？
+		 * 把key对象通过hash()方法计算hash值，然后用这个hash值对数组长度取余数（默认是16）来决定该key对象
+		 * 在数组中存储的位置，当这个位置有多个对象时以链表结构存储，当链表长度大于8时，链表将转换为红黑树结构存储
+		 * 这样做的目的是为了取值更快，存储的数据量越大，性能的表现越明显。
+		 */
+		/**
+		 * 数组的扩充原理：数组的容量超过75%，说明该数组需要被扩充
+		 * 扩充的算法是：当前数组<<1（相当于乘2），当扩充的时候数组的顺序可能会重新计算（hash值重新计算），非常耗性能。
+		 * 开发中尽量要减少扩充次数带来的性能问题。
+		 * 线程不安全，适合在单线程中使用
+		 */
+		/**
+		 * hashmap和hashtable的区别：
+		 * hashtable基于hash表实现（数组+链表）
+		 * 默认数组大小11，加载因子0.75，与hashmap不同的是hashmap是Node来存储数据，hashtable是用entry来存储数据
+		 * 扩充方式，原数组大小<<1(乘2)加1
+		 * 线程安全，用在多线程访问时性能更好
+		 */
+		/**
+		 * linkedHasMap此实现与HashMap的不同之处在于linkedHashMap维护着一个双重链表，在散列的时候不用重新计算hash值
+		 * linkedhashmap是hashmap的子类
+		 */
+		Map<Integer,String> nums = new HashMap<>();
+		nums.put(1, "JOB");
+		nums.forEach((key,value)->System.out.println(key+value));
+	}
+
+}

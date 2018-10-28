@@ -1,0 +1,40 @@
+package JOB;
+
+public class _10_24_Thread_synchronized {
+	public static void main(String[] args) {
+		MyRunnable5 mr = new MyRunnable5();
+		Thread t1 = new Thread(mr);
+		Thread t2 = new Thread(mr);
+		t1.start();
+		t2.start();
+		// 多线程共享数据时，会发生线程不安全的情况
+		// 多线程共享数据时必须用同步锁
+		/**
+		 * 同步有两个方法 synchronized
+		 */
+	}
+}
+
+class MyRunnable5 implements Runnable {
+	// 线程不安全
+	private int ticket = 10;// 售票
+	private Object obj = new Object(); 
+	@Override
+	public void run() {
+		for (int i = 0; i < 300; i++) {
+			ticket--;
+			if (ticket > 0) {
+				synchronized (obj) {
+					System.out.print("余票：");
+					try {
+						Thread.sleep(10);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					System.out.println(ticket + "张");
+				}
+			}
+		}
+	}
+}

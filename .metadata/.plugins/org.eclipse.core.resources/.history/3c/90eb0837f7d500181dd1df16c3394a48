@@ -1,0 +1,15 @@
+package JOB;
+
+public class _10_22_Thread_Study {
+	public static void main(String[] args) {
+		//多线程与并发
+		/**
+		 * 程序是指令和数据的有序集合
+		 * 进程是程序在处理机上的一次执行过程
+		 * 进程是一个具有独立功能的程序
+		 */
+		 //进程有三种状态：就绪状态，运行状态，阻塞状态
+		
+	}
+
+}

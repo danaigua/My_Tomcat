@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>身份验证</title>
+</head>
+<body>
+<form action="_10_28_filter_Study" method="POST">
+<input type="text" value="name" placeholder="请输入姓名">姓名
+<input type="submit"/>提交
+</form>
+</body>
+</html>

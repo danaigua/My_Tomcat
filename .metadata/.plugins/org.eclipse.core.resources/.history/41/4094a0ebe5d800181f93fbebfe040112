@@ -1,0 +1,20 @@
+package com;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+/**
+ * Servlet implementation class Myservlet
+ */
+@WebServlet("/Myservlet")
+public class Myservlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public Myservlet() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

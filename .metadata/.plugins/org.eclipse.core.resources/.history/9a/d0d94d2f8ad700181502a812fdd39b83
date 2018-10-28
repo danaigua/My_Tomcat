@@ -1,0 +1,96 @@
+package JOB;
+
+public class _10_24_producter_custmer {
+	public static void main(String[] args) {
+		// 多线程分享数据的经典案例
+		Food food = new Food();
+		Producter p = new Producter(food);
+		Customers c = new Customers(food);
+	    Thread t1 = new Thread(p);
+	    Thread t2 = new Thread(c);
+	    t1.start();
+	    t2.start();
+	}
+}
+//消费者
+class Customers implements Runnable{
+	private Food food;
+	public Customers(Food food) {
+		this.food = food;
+	}
+	@Override
+	public void run() {
+		food.get();
+		// TODO Auto-generated method stub
+		
+	}
+}
+//生产者
+class Producter implements Runnable{
+	private Food food;
+	public Producter(Food food) {
+		this.food = food;
+	}
+	@Override
+	public void run() {
+		for(int i = 0;i<20;i++) {
+			if(i%2==0) {
+				try {
+					food.set("111", "1111");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}else {
+				try {
+					food.set("222", "2222");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}
+class Food{
+	private String name;
+	private String desc;
+	//生产
+	public void set(String name, String desc) throws InterruptedException {
+		this.setName(name);
+		Thread.sleep(500);
+		this.setDesc(desc);
+	}
+	//消费
+	public void get() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(this.getName()+"->"+this.getDesc());
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public Foot() {
+		super();
+	}
+	public Foot(String name, String desc) {
+		super();
+		this.name = name;
+		this.desc = desc;
+	}
+	@Override
+	public String toString() {
+		return "Foot [name=" + name + ", desc=" + desc + "]";
+	}
+}

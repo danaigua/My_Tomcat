@@ -1,0 +1,11 @@
+package JOB;
+
+import org.junit.jupiter.api.Test;
+
+public class _10_21_guava_study {
+	@Test
+	public void testGuava1() {
+		System.out.println("test guava");
+	}
+	
+}

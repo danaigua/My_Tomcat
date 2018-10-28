@@ -1,0 +1,38 @@
+package JOB;
+
+public class _10_23_Thread_join_Study {
+	public static void main(String[] args) throws InterruptedException {
+		MyRunnable2 mr2 = new MyRunnable2();
+		Thread t = new Thread(mr2);
+		t.start();
+		for(int i = 0;i < 50;i++) {
+			System.out.println(Thread.currentThread().getName()+"->");
+			try {
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(i==20) {
+				t.join();//让t执行完毕，主线程在执行
+			}
+		}
+	}
+
+}
+class MyRunnable2 implements Runnable{
+
+	@Override
+	public void run() {
+		for(int i = 0;i<50;i++) {
+			System.out.println(Thread.currentThread().getName()+"->");
+			try {
+				Thread.sleep(300);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+}

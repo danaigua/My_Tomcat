@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>复选框</h1>
+<form action="_10_27_Servlet_CheckBox_Demo" method="POST">
+<input type="checkbox" placeholder="name" checked="checked" />菜鸡编程
+<input type="checkbox" placeholder="geogle" checked="checked" />geogle
+<input type="checkbox" placeholder="taobao" checked="checked" />淘宝
+<input type="submit" value="提交" />
+</form>
+</body>
+</html>
